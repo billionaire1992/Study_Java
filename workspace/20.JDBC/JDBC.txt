@@ -1,0 +1,53 @@
+○ JDBC : Java DataBase Connectivity
+	- JAVA와 DB를 연동하는 프레임워크(FrameWork)
+○ JDBC 준비사항 (프레임워크 구축)
+	- JAVA 개발환경 구축 : JDK(개발도구), JRE(실행환경) 설치, IDE(통합개발환경, Eclipse) 설치  
+	- DataBase 설치 : Oracle SQL 21c XE, SQL Developer 설치
+	- 사용자 계정 추가 
+	 	# CMD > sqlplus > 사용자명 : system, 비밀번호 0000 > 로그인
+	 	# SQL> create user c##hanul identified by 0000; ▶ 사용자 추가 
+	 	# SQL> grant dba to c##hanul; ▶ 권한부여 
+	 	※ 사용자 계정 입력시 Oracle 12 버전 이후부터는 계정명 앞에 c## 입력해야한다.
+	 		→SQL >alter session set "_ORACLE_SCRIPT"=true; ▶ 사용자 계정앞에 c##을 생략하는 쿼리문
+	 	#SQL > commit; ▶수정(변경) 한 사항을 저장 	
+	 	#CMD에서 사용자 계정이 생성되면, SQL Developer에 사용자 추가 : 접속 View 에서 (+) 버튼 클릭
+	- Java와 DB를 연동할 수 있는 API(Library) 설치(등록) : ojdbc8.jar
+		▶ Oracle DB 설치된 폴더 > dbhomeXE > jdbc > lib → C:\oracle21c\dbhomeXE\jdbc\lib
+		
+○ 외부 API(Library) 등록 (External Project 참조) ▶ 정적로딩 
+	- 프로젝트 > 마오 > Build Path > Configure Build Path...
+	- 상단 탭 : Libraries > Classpath > Add External JARs... > API(Library) 선택 > Apply and Close
+	- Referenced Libraries 항목 생성되고 API(Library) 등록 완료 
+	
+○ JDBC 주요한 클래스/인터페이스 			 	 	 	
+	- OracleDriver : 동적로딩 
+	- Connection : JAVA와 DB를 연결객체
+	- Statement, PreparedStatement : SQL 문장(Query) 전송객체 
+	- ResultSet : 조회/검색(Select Query) 요청 시 결과객체 
+	
+★ SQL 언어의 종류(기능) 
+
+① 데이터 정의어(Data Definition Language, DDL)
+	- CREATE : 테이블 생성 
+	- DROP : 테이블 제거 
+	- ALTER : 테이블 구조 변경  
+		
+② 데이터 조작어(Data Manipulation Language, DML) ▶ 응용 SW 개발자가 많이 사용 
+	- INSERT : 데이터 삽입
+	- DELETE : 데이터 삭제 
+	- UPDATE : 데이터 갱신(수정) 
+	- SELECT : 데이터 조회(검색)
+	
+	★select (검색) : sql → ps.executeQuery() → ResultSet(rs) → ArrayList<>
+	★insert(삽입), delete(삭제), update(수정) : sql → ps.executeUpdate 
+
+③ 데이터 제어어(Data Control Language, DCL) 
+	- COMMIT : 수정된 사항을 최종적으로 저장(반영) → insert, delete, update
+	- ROLLBACK : 수정된 사항을 취소 (되돌리기) → commit 명령 실행 하기 전 사용 
+	- GRANT : 권한 설정(부여)
+	- REVOKE : 권한 해제 	
+
+
+
+
+

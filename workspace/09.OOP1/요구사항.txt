@@ -1,0 +1,70 @@
+ ○ Book.java
+ 	-멤버변수 선언 : 제목(title),  저자(name), 출판사(company), 단가(cost), 수량(qty), 가격(price) 
+ 	-가격계산 멤버 메소드 정의 : getPrice() → 단가 * 수량
+ 	-출력 멤버 메소드 정의 : display ()
+ 	
+ 	
+ 	 
+ ○ BookMain01.java
+ 	-Book Class 객체 생성
+ 	-값을 할당
+ 	-가격을 계산하고 출력하는 메소드를 호출 
+ 	
+ 제목(title) : JAVA 
+ 저자(name) : 신용권
+ 출판사(company) : 한빛미디어
+ 단가(cost) : 24000 
+ 수량 (qty) : 14
+ 
+ 제목(title) : View 
+ 저자(name) : 김은옥
+ 출판사(company) : 삼양미디어
+ 단가(cost) : 28000 
+ 수량 (qty) : 11
+ 
+ 제목(title) : SQL 
+ 저자(name) : 개발팀 
+ 출판사(company) : 한울
+ 단가(cost) : 15000 
+ 수량 (qty) : 19
+ 
+ 
+ ○PersonMain.java
+ 	- 3명의 회원정보 (이름, 나이,  키, 체중, 성별 ▶ PersonDTO.java)를 저장할 
+ 		객체배열 (person[])을 선언 및 생성하고 값을 할당
+ 	- 홍길동, 33, 175.5, 75, 남
+ 	- 박문수, 30, 180, 65.5, 남
+ 	- 성춘향, 28 ,165, 48.5, 여
+ 	- 출력메소드를 호출 : display()
+ 	- 나이의 오름차순으로 정렬 후 출력 메소드를 호출 : ageAscSort(), display()
+ 	- 키의 내림차순으로 정렬 후 메소드를 호출  : heightDescSort(), display()
+ ○PersonDTO.java
+ 	- 멤버 변수 선언 : name, age, height, weight, gender ▶접근제어자 : private
+ 	- 디폴트 생성자 메소드 초기화 
+ 	- 생성자 메소드 초기화 
+ 	- Getter & Setters Method
+ 	
+○ PersonDAO.java
+	- 출력 메소드를 정의 :display()	
+ 	- 나이의 오름차순으로 정렬하는 메소드를 정의 :ageAscSort();
+ 	- 키의 내림차순으로 정렬하는 메소드를 정의 : heightDescSort();
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

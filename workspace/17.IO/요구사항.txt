@@ -1,0 +1,24 @@
+○ FruitMain.java ▶ default package
+   - 파일 입력(fruit.txt)을 위한 준비단계
+   - 열려진 파일의 내용을 읽어서 저장할 변수를 초기화
+   - TAB으로 split()한 후, FruitDTO(com.hanul.fruit package) 객체 생성
+   - ArrayList<FruitDTO> fruit 컬렉션 배열 저장
+   - FruitDAO 객체를 생성(fruit<> 매개변수로 전달)하고 메소드 호출
+   - getPrice() : 가격계산
+   - priceDescSort() : 가격 내림차순 정렬
+   - display() : 화면출력
+   - fileSave() : 파일출력(저장)
+
+○ FruitDTO.java ▶ com.hanul.fruit package
+   - 멤버변수선언 : name, cost, qty, price
+   - 디폴트 생성자 메소드
+   - 생성자 메소드 초기화 : 멤버변수 3개로 초기화
+   - Getters & Setters 메소드
+
+○ FruitDAO.java ▶ com.hanul.fruit package
+   - ArrayList<FruitDTO> fruit를 매개변수로 전달받는 생성자 메소드 구현
+   - getPrice() : 가격계산 메소드 정의
+   - priceDescSort() : 가격 내림차순 정렬 메소드 정의
+   - display() : 화면출력 메소드 정의
+   - fileSave() : 파일출력(저장) 메소드 정의 → fruitResult.txt
+   - 단, 금액의 경우 원화기호화 천단위 구분기호를 표시

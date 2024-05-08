@@ -1,0 +1,53 @@
+○	Server / Client ▶ NewWorking 
+	- Server : 정보를 응답(제공) ▶ Response
+	- Client : 정보를 요청(질의) ▶ Request
+
+○ IP Address : 네트워크에 연결되어 있는 터미널(단말기)를 구분하기 위한 고유한 주소 
+	- CMD (명령 프롬프트) > ipconfig
+	- IPv4 : 32bit 주소 체계
+	- IPv6 : 128bit 주소체계 (차세대 IP주소)  	
+
+○ Port Number : 네트워크 연결되어 있는 터미널(단말기) 간에 데이터가 전송되는 통로 
+	- 0 ~ 65535 할당
+	- 0 ~ 1023 : 예약된 포트로서 사용할 수 없다.
+	- CMD(명령 프롬프트) > netstat /an , netstat -an 
+	
+○ Socket : IP Address + Port Number 
+	- Server Socket : ServerSocket, Socket
+	- Client Socket : Socket
+	- Socket 간의 통신은 JAVA의 IO를 이용해서 통신 :  입출력 Stream ▶ IO의 연장선 
+	
+○ 프로토콜(통신규약) : TCP / UDP 
+	- TCP : 전송 제어 프로토콜, 신뢰성 있는 전송 중시 
+	- UDP : 사용자 데이터그램 프로토콜, 전송 속도 중시 
+===================================================================================
+[Client]                                               [Server] 		
+Socket : 서버 IP주소 + PortNumber 					   ServerSocket : Port번호 할당
+													   Socket : 클라이언트의 접속 정보  ▶ ss.accept();		
+★ 출력 스트림
+	OutputStream os = socket.getOutputStream();				//socket 으로 부터 기본 출력스트림을 가져온다 
+	//OutputStreamWriter osw = new OutputStreamWriter(os);	//문자 단위 (유니코드) 를 출력하는 스트림
+	//BufferedWriter bw = new BufferedWriter(osw);			//속도향상을 위해									
+	PrintWriter out = new PrintWriter(os);					//PrintWriter : OutputStreamWriter + BufferedWriter
+
+★ 입력스트림
+	InputStream is = socket.getInputStream();			//socket 으로부터 기본 입력스트림을 가져온다
+	InputStreamReader isr = new InputStreamReader(is);	//유니코드를 입력하는 스트림 
+	BufferedReader br = new BufferedReader(isr);		//속도 향상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				   		
